@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Greenlix Technologies | Premium Footer — Clean Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            background: linear-gradient(145deg, #eef2f5 0%, #dce5ec 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* demo content */
+        .demo-content {
+            flex: 1;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .demo-content h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #1a4d2e, #2ecc71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        .demo-content p {
+            color: #2c3e4e;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(46,204,113,0.15);
+            padding: 0.35rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: #1e6b3e;
+        }
+
+        /* ========== ENHANCED FOOTER — NO CARDS, NO NEWSLETTER ========== */
+        .footer {
+            background: radial-gradient(circle at 10% 20%, #0a1f1a, #05100e);
+            color: #ecfdf5;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(46, 204, 113, 0.5);
+            box-shadow: 0 -20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* subtle animated background accent */
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -20%;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(ellipse at 30% 40%, rgba(46,204,113,0.06), transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.2rem;
+            padding: 3.5rem 5% 2.8rem;
+        }
+
+        /* NO CARDS — completely flat sections */
+        .footer-section {
+            background: none;
+            backdrop-filter: none;
+            border-radius: 0;
+            padding: 0;
+            border: none;
+            transition: none;
+            box-shadow: none;
+        }
+
+        .footer-section:hover {
+            background: none;
+            border-color: transparent;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* heading styling */
+        .footer-section h3 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(120deg, #e2ffe8, #9bffb3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 44px;
+            height: 2.5px;
+            background: linear-gradient(90deg, #2ecc71, #6fe386, #b3ffc4);
+            border-radius: 4px;
+            transition: width 0.25s ease;
+        }
+
+        .footer-section:hover h3::after {
+            width: 70px;
+        }
+
+        .footer-section p, .footer-section .text-muted {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #cfede3;
+        }
+
+        /* quick links list styling */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        .footer-links a {
+            color: #caf0e5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .footer-links a:hover {
+            color: #6fe386;
+            transform: translateX(6px);
+            text-shadow: 0 0 3px rgba(46,204,113,0.4);
+        }
+
+        /* contact items premium */
+        .contact-item-enhanced {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            padding: 0.2rem 0;
+            border-bottom: 1px dashed rgba(110, 227, 134, 0.2);
+        }
+        .contact-icon-box {
+            width: 32px;
+            height: 32px;
+            background: rgba(46, 204, 113, 0.12);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .contact-item-enhanced:hover .contact-icon-box {
+            background: #2ecc71;
+            color: #05100e;
+            transform: scale(1.05);
+        }
+        .contact-item-enhanced a {
+            color: #caf0e5;
+            text-decoration: none;
+        }
+        .contact-item-enhanced a:hover {
+            color: #2ecc71;
+        }
+
+        /* social icons premium flat */
+        .social-grid {
+            display: flex;
+            gap: 14px;
+            margin-top: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .social-circle {
+            background: rgba(255,255,255,0.08);
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.25s;
+            text-decoration: none;
+            color: #d2f0e6;
+            border: 1px solid rgba(46,204,113,0.35);
+        }
+        .social-circle:hover {
+            background: #2ecc71;
+            color: #0a1f1a;
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        /* map modernized no card effect */
+        .map-wrapper iframe {
+            width: 100%;
+            height: 180px;
+            border-radius: 16px;
+            border: 1px solid rgba(46,204,113,0.4);
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .map-wrapper iframe:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+        }
+
+        /* trust badges */
+        .trust-badge {
+            display: flex;
+            gap: 12px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+        .badge-mini {
+            background: rgba(46,204,113,0.12);
+            border-radius: 40px;
+            padding: 4px 14px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #b3f7cf;
+        }
+
+        /* footer bottom */
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(6px);
+            padding: 1rem 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(46,204,113,0.35);
+            position: relative;
+            z-index: 2;
+        }
+        .footer-bottom-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .footer-bottom-links a {
+            color: #caf0e5;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer-bottom-links a:hover {
+            color: #2ecc71;
+        }
+        .back2top {
+            background: rgba(46,204,113,0.18);
+            padding: 6px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+        .back2top:hover {
+            background: #2ecc71;
+            color: #0a1f1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 780px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2.5rem 5%;
+            }
+            .footer-section {
+                text-align: center;
+            }
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+            }
+            .footer-section:hover h3::after {
+                width: 80px;
+            }
+            .contact-item-enhanced {
+                justify-content: center;
+            }
+            .social-grid {
+                justify-content: center;
+            }
+            .trust-badge {
+                justify-content: center;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        a:focus-visible, button:focus-visible, .back2top:focus-visible {
+            outline: 2px solid #2ecc71;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-content">
+        <h1>🌿 Greenlix Technologies</h1>
+        <div class="badge">⚡ Next-Gen Digital Transformation</div>
+        <p>Premium footer — flat sections, no card groups, no newsletter.<br>Clean, professional, and fully responsive.</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- Column 1: About + social + trust -->
+            <div class="footer-section">
+                <h3>Greenlix</h3>
+                <p>Innovative tech ecosystem delivering AI-first platforms, enterprise software, and sustainable digital acceleration across Africa & globally.</p>
+                <div class="trust-badge">
+                    <span class="badge-mini">⭐ 4.9/5 Trustpilot</span>
+                    <span class="badge-mini">🏆 ISO 27001</span>
+                    <span class="badge-mini">🚀 120+ projects</span>
+                </div>
+                <div class="social-grid">
+                    <a href="#" class="social-circle" aria-label="LinkedIn">🔗</a>
+                    <a href="#" class="social-circle" aria-label="Twitter">🐦</a>
+                    <a href="#" class="social-circle" aria-label="GitHub">💻</a>
+                    <a href="#" class="social-circle" aria-label="Instagram">📸</a>
+                    <a href="#" class="social-circle" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links extended -->
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul class="footer-links">
+                    <li><a href="/">🏠 Home</a></li>
+                    <li><a href="/about/">✨ About Greenlix</a></li>
+                    <li><a href="/services/">⚙️ Services & Solutions</a></li>
+                    <li><a href="/portfolio/">📁 Case Studies</a></li>
+                    <li><a href="/careers/">💼 Careers <span style="font-size:0.7rem;">(We're hiring!)</span></a></li>
+                    <li><a href="/blog/">📝 Tech Blog</a></li>
+                    <li><a href="/contact/">📞 Contact & Support</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact + Hours -->
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="contact-item-enhanced">
+                    <span class="contact-icon-box">📍</span>
+                    <span>Westlands, Nairobi, Kenya</span>
+                </div>
+                <div class="contact-item-enhanced">
+                    <span class="contact-icon-box">📞</span>
+                    <span><a href="tel:+254710557540">+254 710 557 540</a></span>
+                </div>
+                <div class="contact-item-enhanced">
+                    <span class="contact-icon-box">📧</span>
+                    <span><a href="mailto:hello@greenlix.com">hello@greenlix.com</a></span>
+                </div>
+                <div class="contact-item-enhanced">
+                    <span class="contact-icon-box">🕒</span>
+                    <span>Mon–Fri: 8am – 6pm (EAT)<br>24/7 Emergency Support</span>
+                </div>
+                <div class="contact-item-enhanced">
+                    <span class="contact-icon-box">💬</span>
+                    <span>Live chat available</span>
+                </div>
+            </div>
+
+            <!-- Column 4: Map only (newsletter removed completely) -->
+            <div class="footer-section">
+                <h3>Visit Us</h3>
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9275983012476!2d36.89472137448244!3d-1.2107103355471671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3fa75d50d18f%3A0x59251acc627450c1!2sGreenlix%20Technologies%20Limited!5e0!3m2!1sen!2ske!4v1777816019810!5m2!1sen!2ske"
+                        loading="lazy"
+                        title="Greenlix HQ location map"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        style="border:0;">
+                    </iframe>
+                </div>
+                <p style="font-size: 0.75rem; margin-top: 10px; opacity: 0.8; text-align: center;">
+                    📍 Riverside Drive, Nairobi
+                </p>
+            </div>
+        </div>
+
+        <!-- footer bottom with dynamic year -->
+        <div class="footer-bottom">
+            <div>
+                © <span id="currentYear"></span> Greenlix Technologies Ltd. — Innovation for a smarter tomorrow.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="/privacy/">Privacy & GDPR</a>
+                <a href="/terms/">Terms of Use</a>
+                <a href="/cookies/">Cookie Preferences</a>
+                <a href="/sitemap/">Sitemap</a>
+                <div class="back2top" id="scrollTopBtn2" role="button" tabindex="0" aria-label="Scroll to top">⬆ Back to Top</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // dynamic copyright year
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+        // smooth scroll to top
+        const scrollBtn = document.getElementById('scrollTopBtn2');
+        function scrollToTopSmooth() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        if (scrollBtn) {
+            scrollBtn.addEventListener('click', scrollToTopSmooth);
+            scrollBtn.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    scrollToTopSmooth();
+                }
+            });
+        }
+
+        // subtle back-to-top opacity on scroll
+        let backBtn = document.querySelector('.back2top');
+        if (backBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 250) {
+                    backBtn.style.opacity = '1';
+                    backBtn.style.transform = 'scale(1)';
+                } else {
+                    backBtn.style.opacity = '0.8';
+                    backBtn.style.transform = 'scale(0.98)';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
